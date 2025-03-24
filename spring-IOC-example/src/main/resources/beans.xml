@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    <bean  id="sim" class="com.springIocpractise.Airtel"></bean>-->
+<!--    <bean id="sim" class="com.springIocpractise.Vodafone"></bean>-->
+<!--    <bean id="student1" class="com.seleniumexpress.dl.Student">-->
+<!--        <constructor-arg name="id" value="1"></constructor-arg>-->
+<!--        <constructor-arg name="name" value="anil"></constructor-arg>-->
+<!--    </bean>-->
+
+
+<!--    <bean id="student2" class="com.seleniumexpress.dl.Student">-->
+<!--        <constructor-arg name="id" value="2"></constructor-arg>-->
+<!--    <property name="name" value="pavan"></property>-->
+<!--    </bean>-->
+<!--<bean id="mathcheatobject" class="com.selenuimexpress.dlo.MathCheat"></bean>-->
+<!--    <bean id="sciencecheatobject" class="com.selenuimexpress.dlo.ScienceCheat"></bean>-->
+
+
+<!--    <bean id="student" class="com.selenuimexpress.dlo.Student">-->
+<!--        <property name="id" value="1"></property>-->
+<!--        <property name="cheat" ref="sciencecheatobject">-->
+<!--            <bean class="com.selenuimexpress.dlo.MathCheat"></bean>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--    <bean id="asu" class="com.selenuimexpress.dlo.AnotherStudent">-->
+<!--        <property name="cheat" ref="mathcheatobject">-->
+<!--            <bean class="com.selenuimexpress.dlo.MathCheat"></bean>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+
+<!--    -->
+<!--    <bean id="datatservice" class="com.seleniumexpress.task.DataService"></bean>-->
+<!--    <bean id="helloservice" class="com.seleniumexpress.task.HelloTuneService"></bean>-->
+<!--    <bean id="missedcallservice" class="com.seleniumexpress.task.MissedCallAlertService"></bean>-->
+
+<!--    <bean id="airtel"  class="com.seleniumexpress.task.Airtel">-->
+<!--        <constructor-arg name="service" ref="missedcallservice" ></constructor-arg>-->
+<!--    </bean>-->
+
+<!--<bean id="subject" class="com.seleniumexpress.task2.Subject">-->
+<!--    <constructor-arg  name="subname" value="java"></constructor-arg>-->
+<!--    <constructor-arg  name="marks" value="40"></constructor-arg>-->
+<!--</bean>-->
+
+<!--    <bean id="student" class="com.seleniumexpress.task2.Student">-->
+<!--        <constructor-arg  name="name" value="niharika"></constructor-arg>-->
+<!--        <constructor-arg  name="rollno" value="1"></constructor-arg>-->
+<!--        <constructor-arg  ref="subject"></constructor-arg>-->
+
+<!--    </bean>-->
+<!--    <bean id="heartobjects" class="com.seleniuexpress.autowire.Heart"></bean>-->
+<!--    <bean id="octopusobjects" class="com.seleniuexpress.autowire.Heart"></bean>-->
+<!--    <bean id="human" class="com.seleniuexpress.autowire.Human" >-->
+<!--        <property name="heart" ref="heartobject"></property>-->
+
+<!--    </bean>-->
+<!--    <context:annotation-config/>-->
+    <context:component-scan base-package="com.annotations"></context:component-scan>
+
+<!--<context:property-placeholder location="database_connection_config.properties"/>-->
+
+
+<!--    <bean id="student" class="com.seleniumexpress.properties.Student">-->
+<!--        <property name="name" value="${Student_name}"></property>-->
+<!--        <property name="course" value="${Student_course}"></property>-->
+<!--        <property name="hobbie" value="${Student_hobbie}"></property>-->
+
+<!--    </bean>-->
+<!--    <bean id="jdbc" class="com.mysql.Jdbcconnection">-->
+
+<!--    </bean>-->
+
+
+</beans>
