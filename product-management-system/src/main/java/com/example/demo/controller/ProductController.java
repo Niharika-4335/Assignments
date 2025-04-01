@@ -7,7 +7,11 @@ import com.example.demo.service.ProductService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -21,8 +25,8 @@ public class ProductController {
         this.productService = service;
     }
     @GetMapping
-    public List<Product> getListOfProducts(){
-        return productService.getListOFProducts();
+    public Page<Product> getListOfProducts(@PageableDefault(value = 5,sort = "price") Pageable pageable){
+        return productService.getListOFProducts(pageable);
     }
 
     @GetMapping("/{id}")
@@ -47,6 +51,18 @@ public class ProductController {
     public void deleteById(@PathVariable Integer id){
        productService.deleteById(id);
     }
+
+    @GetMapping("/category/{category}")
+    public List<Product> findProductByCategory(@PathVariable String category){
+        return productService.findByCategory(category);
+    }
+
+    @GetMapping("/price")
+    public List<Product> findProductByPriceRange(@RequestParam double min,@RequestParam  double max){
+        return productService.findByPriceBetween(min,max);
+    }
+
+
 
 
 }

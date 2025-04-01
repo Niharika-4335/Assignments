@@ -7,6 +7,8 @@ import com.example.demo.exception.ProductNotFoundException;
 import com.example.demo.mapper.ProductMapper;
 import com.example.demo.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +27,9 @@ public class ProductServiceImp implements  ProductService{
     }
 
     @Override
-    public List<Product> getListOFProducts() {
-        return productRepository.findAll();
+    public Page<Product> getListOFProducts(Pageable pageable) {
+
+        return productRepository.findAll(pageable);
     }
 
     @Override
@@ -62,4 +65,16 @@ public class ProductServiceImp implements  ProductService{
         }
         productRepository.deleteById(id);
     }
+
+    @Override
+    public List<Product> findByCategory(String category) {
+       return productRepository.findByCategory(category);
+    }
+
+    @Override
+    public List<Product> findByPriceBetween(Double minPrice, Double maxPrice) {
+        return productRepository.findByPriceBetween(minPrice, maxPrice);
+    }
+
+
 }
