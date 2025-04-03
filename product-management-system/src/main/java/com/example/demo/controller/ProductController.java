@@ -24,7 +24,7 @@ public class ProductController {
     public ProductController(ProductService service) {
         this.productService = service;
     }
-    @GetMapping
+    @GetMapping("/")
     public Page<Product> getListOfProducts(@PageableDefault(value = 5,sort = "price") Pageable pageable){
         return productService.getListOFProducts(pageable);
     }
@@ -34,7 +34,7 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
-    @PostMapping
+    @PostMapping()
     @Transactional
     public ProductResponseDto createProduct(@Valid  @RequestBody ProductRequestDto productRequestDto) {
         return productService.saveProduct(productRequestDto);
