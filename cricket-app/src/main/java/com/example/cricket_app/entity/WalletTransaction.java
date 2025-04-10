@@ -1,6 +1,6 @@
 package com.example.cricket_app.entity;
 
-import com.fasterxml.jackson.databind.deser.DataFormatReaders;
+import com.example.cricket_app.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,9 +26,9 @@ public class WalletTransaction {
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal amount;
 
-    @ManyToOne
-    @JoinColumn(name = "transaction_type", referencedColumnName = "name", nullable = false)
-    private WalletTransactionType transactionType;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "transaction_type", nullable = false)
+    private TransactionType transactionType;
 
     @ManyToOne
     @JoinColumn(name = "match_id")
@@ -44,4 +44,7 @@ public class WalletTransaction {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+
+
+
 }

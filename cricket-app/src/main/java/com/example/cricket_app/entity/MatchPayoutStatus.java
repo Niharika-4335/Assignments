@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MatchPayoutStatus  implements Serializable {
+public class MatchPayoutStatus implements Serializable {
     @Id
     @Column(name = "match_id")
     private Long matchId; // Assuming Match uses Long for ID
@@ -22,7 +22,7 @@ public class MatchPayoutStatus  implements Serializable {
     @OneToOne
     @MapsId // This maps the ID to the matchId
     @JoinColumn(name = "match_id")
-    private Match match;
+    private Match match;//it means we are giving the same primary key and foreign key.
     @Column(name = "is_processed", nullable = false)
     private Boolean isProcessed = false;
 

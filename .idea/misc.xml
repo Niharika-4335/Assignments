@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springmvc-example/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-IOC-example/pom.xml" />
+        <option value="$PROJECT_DIR$/crud-springdata-Jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/servlet-jsp-example/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-example/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-core-example/springcoreexample/pom.xml" />
+        <option value="$PROJECT_DIR$/employee-miniproject/pom.xml" />
+        <option value="$PROJECT_DIR$/restapi-crud-standardJpa/cruddemo/pom.xml" />
+        <option value="$PROJECT_DIR$/patient-crudoperations/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="23" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,5 +1,7 @@
 package com.example.cricket_app.entity;
 
+import com.example.cricket_app.enums.MatchStatus;
+import com.example.cricket_app.enums.Team;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -70,11 +72,5 @@ public class Match {
         updatedAt = LocalDateTime.now();
     }
 
-    public enum MatchStatus {
-        UPCOMING, ONGOING, COMPLETED
-    }
 
-    public enum Team {
-        TEAM_A, TEAM_B
-    }
 }

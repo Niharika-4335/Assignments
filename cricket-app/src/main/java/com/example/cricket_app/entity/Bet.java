@@ -1,5 +1,7 @@
 package com.example.cricket_app.entity;
 
+import com.example.cricket_app.enums.BetStatus;
+import com.example.cricket_app.enums.Team;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,7 +32,7 @@ public class Bet {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "team_chosen", nullable = false)
-    private Match.Team teamChosen;
+    private Team teamChosen;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal amount;
@@ -47,8 +49,6 @@ public class Bet {
         createdAt = LocalDateTime.now();
     }
 
-    public enum BetStatus {
-        PENDING, WON, LOST
-    }
+
 }
 

@@ -28,6 +28,7 @@ public class Payout {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private Users user;//one payout per user and per match
+    //we have to use unique constraint because if there are two match ids 2 times bet will be done.
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal amount;

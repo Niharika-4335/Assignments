@@ -1,5 +1,6 @@
 package com.example.cricket_app.entity;
 
+import com.example.cricket_app.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -7,17 +8,16 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "users")
+@Data
 public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
     @Column(unique = true, nullable = false)
     private String email;
 
@@ -49,72 +49,9 @@ public class Users {
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
-      updatedAt = LocalDateTime.now();
-// when we create one user create and update time will be same.2
+        updatedAt = LocalDateTime.now();
+
     }
 
-//    @PreUpdate
-//    protected void onUpdate() {
-//        updatedAt = LocalDateTime.now();
-//    }
 
-    public enum UserRole {
-        PLAYER, ADMIN
-    }
-
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
-//    public String getPasswordHash() {
-//        return passwordHash;
-//    }
-//
-//    public void setPasswordHash(String passwordHash) {
-//        this.passwordHash = passwordHash;
-//    }
-//
-//    public String getFullName() {
-//        return fullName;
-//    }
-//
-//    public void setFullName(String fullName) {
-//        this.fullName = fullName;
-//    }
-//
-//    public UserRole getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(UserRole role) {
-//        this.role = role;
-//    }
-//
-//    public LocalDateTime getCreatedAt() {
-//        return createdAt;
-//    }
-//
-//    public void setCreatedAt(LocalDateTime createdAt) {
-//        this.createdAt = createdAt;
-//    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public LocalDateTime getUpdatedAt() {
-//        return updatedAt;
-//    }
-//
-//    public void setUpdatedAt(LocalDateTime updatedAt) {
-//        this.updatedAt = updatedAt;
-//    }
 }
